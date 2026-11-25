@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
+import Intro from './Intro.jsx';
 
 const PALETTE = ['#5eead4', '#a78bfa', '#fbbf24', '#f472b6', '#4ade80', '#fb923c', '#60a5fa', '#f87171', '#22d3ee', '#c084fc'];
 const CONCEPT_COLOR = '#e5e7eb';
@@ -45,6 +46,12 @@ export default function App() {
   const [query, setQuery] = useState('');
   const [mono, setMono] = useState(false);
   const [spin, setSpin] = useState(false);
+  const [introDone, setIntroDone] = useState(false);
+  const stageRef = useRef(null);
+
+  useEffect(() => {
+    document.body.classList.toggle('intro-on', !introDone);
+  }, [introDone]);
 
   useEffect(() => {
     fetch('/graph.json')
@@ -274,6 +281,7 @@ export default function App() {
 
   return (
     <>
+      <div ref={stageRef} className="stage" style={introDone ? undefined : { opacity: 0 }}>
       <ForceGraph2D
         ref={fgRef}
         graphData={graphData}
@@ -293,6 +301,17 @@ export default function App() {
         cooldownTime={12000}
         d3VelocityDecay={0.3}
       />
+      </div>
+      {!introDone && (
+        <Intro
+          stageRef={stageRef}
+          onStart={() => fgRef.current?.zoomToFit(0, 70)}
+          onDone={() => {
+            if (stageRef.current) stageRef.current.style.transform = '';
+            setIntroDone(true);
+          }}
+        />
+      )}
 
       <div className="panel topbar">
         <input
