@@ -1,0 +1,28 @@
+{
+  "rootTitle": "Second Year",
+  "excludeTitles": ["Redtree work", "Applications", "Opportunities", "Monthly Budget"],
+  "minConceptHits": 2,
+  "aliases": {
+    "Transparency Mechanisms": ["Ada Lovelace"],
+    "Guidance for Government Chief Scientific Advisers": ["GO-Science", "CSA guidance"],
+    "A rough guide to science advice": ["rough guide", "Wilsdon"],
+    "AI Playbook": ["AI Playbook"],
+    "POSTnote 708": ["POSTnote 708", "POSTnote"],
+    "UK System of Government": ["system of government"]
+  },
+  "concepts": [
+    { "name": "Expertise", "terms": ["expertise", "expert*", "epistemic*", "civic epistemology", "collins and evans"] },
+    { "name": "Evidence-based policy", "terms": ["evidence-based", "evidence based", "ebpm", "evidence for policy"] },
+    { "name": "Chief Scientific Advisers", "terms": ["chief scientific advis*", "csa", "csas", "go-science", "sage"] },
+    { "name": "AI and regulation", "terms": ["ai", "artificial intelligence", "algorithmic", "automated decision*", "generative ai", "llm*"] },
+    { "name": "Transparency and accountability", "terms": ["transparen*", "accountab*", "contestab*", "atrs", "freedom of information"] },
+    { "name": "Bias and fairness", "terms": ["bias*", "discriminat*", "fairness", "equality act"] },
+    { "name": "Policy process", "terms": ["policy cycle", "agenda setting", "policymaking", "policy pilot*", "impact assessment*"] },
+    { "name": "Uncertainty and risk", "terms": ["uncertaint*", "precaution*", "risk*"] },
+    { "name": "Parliament and democracy", "terms": ["parliament*", "select committee*", "hansard", "civil service", "suffrag*"] },
+    { "name": "Contested science", "terms": ["controvers*", "contested", "post-normal", "badger*", "bovine tb"] },
+    { "name": "Public trust and engagement", "terms": ["public trust", "public engagement", "public concern", "civil society"] },
+    { "name": "Realism and theory change", "terms": ["realis*", "underdetermination", "paradigm*", "kuhn*", "popper*", "falsif*"] },
+    { "name": "Science and religion", "terms": ["religio*", "theolog*", "creation*", "spiritual*"] }
+  ]
+}
