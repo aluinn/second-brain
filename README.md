@@ -24,3 +24,12 @@ Link kinds: `parent`, `mention` (Notion @mentions/links), `reference`, `week` (s
 ## Privacy
 `data/`, `public/graph.json` and `.env` contain your notes/secrets and are git-ignored. Note that `npm run build` copies `graph.json` into `dist/`.
 If you deploy to Vercel, the site **must be private / password-protected** (Vercel Authentication or similar), otherwise your notes are public.
+
+## Deploying to Vercel (private)
+`graph.json` is git-ignored, so Vercel can't build it from GitHub. Instead, build locally and upload the finished build:
+
+1. One-off: `npx vercel login`, then `npx vercel link` in this folder.
+2. In the Vercel dashboard → Project → Settings → **Deployment Protection**, set **Vercel Authentication** to protect **All Deployments** (including the production URL), or add Password Protection. Do this *before* the first deploy.
+3. `npm run deploy` (refreshes your notes from Notion, builds, uploads).
+
+`vercel.json` turns off automatic GitHub deployments, which would otherwise show an empty "No graph data yet" site.

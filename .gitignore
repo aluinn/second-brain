@@ -4,3 +4,4 @@ dist
 data/
 public/graph.json
 .DS_Store
+.vercel
